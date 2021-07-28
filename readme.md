@@ -5,5 +5,5 @@
 yarn install 
 yarn dev
 ```
-#### 800多道小程序面试题
+#### 800多道面试题小程序
 ![](src/assets/img/qrcode.jpg)
