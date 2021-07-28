@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+[v-cloak]{display: none;}/*隐藏未编译的 Mustache 标签直到实例准备完毕。*/
+/*隐藏横向和纵向滚动条*/
+::-webkit-scrollbar,
+::-webkit-scrollbar:horizontal {
+  display: none;
+  height: 0;
+}
+/* 使用图片作为a标签的点击按钮时，当触发touchstart的时候，往往会有一个灰色的背景 */
+a,a:hover,a:active,a:visited,a:link,a:focus{
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+/* 去除ios input框点击时的灰色背景 */
+input{
+  outline:none;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+select {
+  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+  border: solid 1px #333;
+  /*很关键：将默认的select选择框样式清除*/
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  /*在选择框的最右侧中间显示小箭头图片*/
+  /*background: url('~@/assets/img/') no-repeat scroll right center transparent;*/
+  /*background: url('https://raw.githubusercontent.com/ourjs/static/gh-pages/2015/arrow.png') no-repeat scroll right center transparent;*/
+  /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+  /*padding-right: 14px;*/
+}
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand {
+  display: none;
+}
+
+/* 主体样式 */
+body{
+  color: #222; line-height: 1.5;font-size: 32px; font-family: Verdana, 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑,'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+/*body {background-color: #f8f8f8;}*/
+html, body, #app{ -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width:100%;margin: 0;padding: 0;}
+/*html, body{overflow-y: auto;}*/
+li{list-style:none;}
+ul,li{margin: 0; padding: 0;}
+a{color: #333;}
+p{color: unset;padding: 0;margin: 0;text-align: left;}
+i{font-style: normal;}
+s{text-decoration: none;}
+iframe{display: block;}
+h1, h2, h3, h4, h5, h6{margin: 0;/* padding-top: 5px; padding-bottom: 5px;*/}
+
+/* 辅助 */
+.f-justifyfix{display:inline-block; width:100%; height:0; overflow:hidden;}
+
+/* 解决BUG */
+label > * {pointer-events: none;}
+img {content: normal !important;}
+.ell{
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ell2{
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.clr {
+  &:after {
+      clear: both;
+      content: '.';
+      display: block;
+      height: 0;
+      line-height: 0;
+      overflow: hidden;
+  }
+
+  *height: 1%;
+}
+
+.hidden{
+  display: none;
+}
