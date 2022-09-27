@@ -7,5 +7,3 @@
 yarn install 
 yarn dev
 ```
-#### 800多道面试题小程序
-![](https://tva1.sinaimg.cn/large/008i3skNgy1gsx0qo4qvqj30by0byq3h.jpg)
